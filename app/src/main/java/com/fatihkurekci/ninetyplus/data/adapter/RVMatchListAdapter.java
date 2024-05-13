@@ -1,0 +1,71 @@
+package com.fatihkurekci.ninetyplus.data.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.fatihkurekci.ninetyplus.R;
+import com.fatihkurekci.ninetyplus.data.model.Match;
+
+import java.util.ArrayList;
+
+public class RVMatchListAdapter extends RecyclerView.Adapter<RVMatchListAdapter.ViewHolder> {
+
+    Context context;
+    ArrayList<Match> matchesLists;
+    public RVMatchListAdapter(Context context, ArrayList<Match> arrayList) {
+        this.context = context;
+        this.matchesLists = arrayList;
+    }
+
+    @NonNull
+    @Override
+    public RVMatchListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.rv_matcheslistlayout,parent,false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RVMatchListAdapter.ViewHolder holder, int position) {
+        holder.bind(matchesLists.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return matchesLists.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView leagueNameTextView, homeTeamNameTextView, homeTeamScoreTextView, awayTeamScoreTextView, awayTeamNameTextView;
+        private ImageView homeTeamLogoImageView, awayTeamLogoImageView;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            leagueNameTextView = itemView.findViewById(R.id.leagueNameTextView);
+            homeTeamNameTextView = itemView.findViewById(R.id.homeTeamNameTextView);
+            homeTeamScoreTextView = itemView.findViewById(R.id.homeTeamScoreTextView);
+            awayTeamScoreTextView = itemView.findViewById(R.id.awayTeamScoreTextView);
+            awayTeamNameTextView = itemView.findViewById(R.id.awayTeamNameTextView);
+
+            homeTeamLogoImageView = itemView.findViewById(R.id.homeTeamLogoImageView);
+            awayTeamLogoImageView = itemView.findViewById(R.id.awayTeamLogoImageView);
+        }
+
+        public void bind(Match match) {
+            leagueNameTextView.setText(match.getCompetition().getName());
+            homeTeamNameTextView.setText(match.getHomeTeam().getName());
+            homeTeamScoreTextView.setText(String.valueOf(match.getScore().getFullTime().getHome()));
+            awayTeamScoreTextView.setText(String.valueOf(match.getScore().getFullTime().getAway()));
+            awayTeamNameTextView.setText(match.getAwayTeam().getName());
+
+            Glide.with(context).load(match.getHomeTeam().getCrest()).into(homeTeamLogoImageView);
+            Glide.with(context).load(match.getAwayTeam().getCrest()).into(awayTeamLogoImageView);
+        }
+    }
+}

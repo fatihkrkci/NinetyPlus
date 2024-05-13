@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437430738702",
+    "project_id": "ninetyplus-6e960",
+    "storage_bucket": "ninetyplus-6e960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437430738702:android:158cacedaa082c9d94815f",
+        "android_client_info": {
+          "package_name": "com.fatihkurekci.ninetyplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ3HvpCrc8hiq68zOK0dSMPNJ_Aa7CbSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

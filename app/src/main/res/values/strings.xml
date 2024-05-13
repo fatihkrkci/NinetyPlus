@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NinetyPlus</string>
+
+    <string name="onboarding_screen1_title">Favori Takımını Seç</string>
+    <string name="onboarding_screen2_title">Maçları Takip Et</string>
+    <string name="onboarding_screen3_title">Lig İstatistiklerini Gör</string>
+    <string name="onboarding_screen1_description">Gönül verdiğin takım hakkındaki her şeyden ilk sen haberdar ol. Bize güven, arkadaşlarına gol haberini veren ilk kişi olmanın tadı başka :)</string>
+    <string name="onboarding_screen2_description">Geçmiş, gelecek ve şu an oynanan tüm maçları anında gör. Skorları, kalan dakikaları ve gol atan oyuncuları öğren. Tüm maçlardan haberin olsun.</string>
+    <string name="onboarding_screen3_description">90+ sayesinde birçok farklı ligteki en çok gol atan veya en çok asist yapan oyuncular gibi bilgileri görebilirsin.</string>
+    <string name="onboarding_startDescription">Hemen kayıt ol veya hesabın varsa giriş yap, takip ettiğin maçlar 90+lara gitmeden sen de bize katıl.</string>
+    <string name="onboard_skip">Atla</string>
+    <string name="onboard_back">Geri</string>
+    <string name="onboard_next">İleri</string>
+    <string name="onboard_finish">Son</string>
+    <string name="onboarding_startTitle">90+ya Hoş Geldin</string>
+
+    <string name="signup_button">Kayıt Ol</string>
+    <string name="signin_button">Giriş Yap</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
