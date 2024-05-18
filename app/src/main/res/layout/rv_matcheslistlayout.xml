@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/item_border">
 
     <!-- Liga adı -->
     <TextView
         android:id="@+id/leagueNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textAlignment="center"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -23,68 +23,86 @@
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
 
-        <!-- Takım logosu -->
-        <ImageView
-            android:id="@+id/homeTeamLogoImageView"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"/>
-
-        <!-- Takım ismi ve gol sayısı -->
-        <TextView
-            android:id="@+id/homeTeamNameTextView"
-            android:layout_width="wrap_content"
+        <!-- Ev sahibi takım -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"/>
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-        <TextView
-            android:id="@+id/homeTeamScoreTextView"
-            android:layout_width="wrap_content"
+            <!-- Takım logosu -->
+            <ImageView
+                android:id="@+id/homeTeamLogoImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"/>
+
+            <!-- Takım ismi -->
+            <TextView
+                android:id="@+id/homeTeamNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="@string/home_team_title"
+                android:layout_gravity="center"/>
+
+            <!-- Gol sayısı -->
+            <TextView
+                android:id="@+id/homeTeamScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="@string/default_score"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <!-- Orta çizgi -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- Deplasman takım -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"/>
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"/>
+            <!-- Takım logosu -->
+            <ImageView
+                android:id="@+id/awayTeamLogoImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"/>
 
-        <TextView
-            android:id="@+id/awayTeamScoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"/>
+            <!-- Takım ismi -->
+            <TextView
+                android:id="@+id/awayTeamNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="@string/away_team_title"
+                android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/awayTeamNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"/>
-
-        <!-- Takım logosu -->
-        <ImageView
-            android:id="@+id/awayTeamLogoImageView"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="8dp"/>
+            <!-- Gol sayısı -->
+            <TextView
+                android:id="@+id/awayTeamScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="@string/default_score"
+                android:layout_gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

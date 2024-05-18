@@ -1,22 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NinetyPlus</string>
 
+    <string name="splash_welcome_text">90+ Uygulamasına Hoş Geldin</string>
+
     <string name="onboarding_screen1_title">Favori Takımını Seç</string>
-    <string name="onboarding_screen2_title">Maçları Takip Et</string>
-    <string name="onboarding_screen3_title">Lig İstatistiklerini Gör</string>
     <string name="onboarding_screen1_description">Gönül verdiğin takım hakkındaki her şeyden ilk sen haberdar ol. Bize güven, arkadaşlarına gol haberini veren ilk kişi olmanın tadı başka :)</string>
+    <string name="onboarding_screen2_title">Maçları Takip Et</string>
     <string name="onboarding_screen2_description">Geçmiş, gelecek ve şu an oynanan tüm maçları anında gör. Skorları, kalan dakikaları ve gol atan oyuncuları öğren. Tüm maçlardan haberin olsun.</string>
+    <string name="onboarding_screen3_title">Lig İstatistiklerini Gör</string>
     <string name="onboarding_screen3_description">90+ sayesinde birçok farklı ligteki en çok gol atan veya en çok asist yapan oyuncular gibi bilgileri görebilirsin.</string>
-    <string name="onboarding_startDescription">Hemen kayıt ol veya hesabın varsa giriş yap, takip ettiğin maçlar 90+lara gitmeden sen de bize katıl.</string>
     <string name="onboard_skip">Atla</string>
     <string name="onboard_back">Geri</string>
     <string name="onboard_next">İleri</string>
     <string name="onboard_finish">Son</string>
-    <string name="onboarding_startTitle">90+ya Hoş Geldin</string>
 
-    <string name="signup_button">Kayıt Ol</string>
-    <string name="signin_button">Giriş Yap</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_started_title">90+\'ya Katıl</string>
+    <string name="onboarding_startDescription">Hemen kayıt ol veya hesabın varsa giriş yap, takip ettiğin maçlar 90+lara gitmeden sen de bize katıl.</string>
 
+    <string name="signin">Giriş Yap</string>
+    <string name="dialog_forgot_password_title">Şifremi Unuttum</string>
+    <string name="dialog_format_enter_your_email_address">E-posta Adresinizi Girin:</string>
+    <string name="cancel_button">İptal</string>
+    <string name="reset_button">Sıfırla</string>
+
+    <string name="signup">Kayıt Ol</string>
+
+    <string name="default_score">0</string>
+    <string name="away_team_title">Misafir Takım</string>
+    <string name="home_team_title">Ev Sahibi Takım</string>
+
+    <string name="email_text">E-posta</string>
+    <string name="password_text">Şifre</string>
+    <string name="redirect_to_login_text">Zaten bir kullanıcı mısın? Giriş Yap</string>
+    <string name="show_password">Şifreyi Göster</string>
+    <string name="redirect_to_login">Kayıtlı değil misin? Kayıt Ol</string>
+
+    <string name="navbar_home">Ana Sayfa</string>
+    <string name="navbar_settings">Ayarlar</string>
+
+    <string name="language_preference">Dil Tercihi</string>
+    <string-array name="languages">
+        <item>@string/language_preference</item>
+        <item>English</item>
+        <item>Türkçe</item>
+    </string-array>
 </resources>

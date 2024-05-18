@@ -83,9 +83,9 @@ public class NavigationActivity extends AppCompatActivity {
                 backButton.setVisibility(View.INVISIBLE);
             }
             if (position == 2) {
-                nextButton.setText("Finish");
+                nextButton.setText(getString(R.string.onboard_finish));
             } else {
-                nextButton.setText("Next");
+                nextButton.setText(getString(R.string.onboard_next));
             }
         }
 

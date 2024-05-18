@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.fatihkurekci.ninetyplus.R;
 import com.fatihkurekci.ninetyplus.client.ApiClient;
@@ -38,7 +39,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // rootView'ü inflate et
+
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         matchesLists = new ArrayList<>();
@@ -48,9 +49,10 @@ public class HomeFragment extends Fragment {
         rv_matcheslist.setAdapter(rvMatchListAdapter);
         populateServices();
 
-        // Düzeltme: rootView'ü döndür
+
         return rootView;
     }
+
 
     public void populateServices() {
         ApiClient.getClient().create(ApiInterface.class).getMatchList().enqueue(new Callback<MatchesListApiResponse>() {
@@ -58,14 +60,13 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<MatchesListApiResponse> call, Response<MatchesListApiResponse> response) {
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
-                        // Log API yanıtını
-// API yanıtını JSON formatına dönüştürme
+
                         String responseBodyJson = new Gson().toJson(response.body());
 
-// JSON formatındaki API yanıtını loglama
+
                         Log.d("HomeFragment", "API response JSON: " + responseBodyJson);
                         if (response.body().getMatches() != null) {
-                            // Log maç verilerini
+
                             Log.d("HomeFragment", "Match data: " + response.body().getMatches().toString());
 
                             matchesLists.addAll(response.body().getMatches());

@@ -60,8 +60,8 @@ public class RVMatchListAdapter extends RecyclerView.Adapter<RVMatchListAdapter.
         public void bind(Match match) {
             leagueNameTextView.setText(match.getCompetition().getName());
             homeTeamNameTextView.setText(match.getHomeTeam().getName());
-            homeTeamScoreTextView.setText(String.valueOf(match.getScore().getFullTime().getHome()));
-            awayTeamScoreTextView.setText(String.valueOf(match.getScore().getFullTime().getAway()));
+            homeTeamScoreTextView.setText(match.getScore().getFullTime().getHome() != null ? String.valueOf(match.getScore().getFullTime().getHome()) : "?");
+            awayTeamScoreTextView.setText(match.getScore().getFullTime().getAway() != null ? String.valueOf(match.getScore().getFullTime().getAway()) : "?");
             awayTeamNameTextView.setText(match.getAwayTeam().getName());
 
             Glide.with(context).load(match.getHomeTeam().getCrest()).into(homeTeamLogoImageView);

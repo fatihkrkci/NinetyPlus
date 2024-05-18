@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="90+ Uygulamasına Hoş Geldin"
+        android:text="@string/splash_welcome_text"
         android:textColor="@color/md_theme_light_onPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

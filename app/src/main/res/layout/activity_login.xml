@@ -22,12 +22,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/md_theme_light_onSecondary"
             android:padding="24dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="@string/signin"
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -40,10 +41,10 @@
                 android:background="@drawable/custom_edittext_secondary"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="@string/email_text"
                 android:drawableLeft="@drawable/ic_baseline_person_24_secondary"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/md_theme_light_textColor"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -52,23 +53,23 @@
                 android:background="@drawable/custom_edittext_secondary"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="@string/password_text"
                 android:drawableLeft="@drawable/ic_baseline_lock_24_secondary"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"
+                android:textColor="@color/md_theme_light_textColor"
                 android:inputType="textPassword"/>
 
             <CheckBox
                 android:id="@+id/show_password_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Şifreyi Göster"
+                android:text="@string/show_password"
                 android:textColor="@color/md_theme_light_secondary" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
+                android:text="@string/signin"
                 android:id="@+id/login_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
@@ -82,7 +83,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:padding="8dp"
-                android:text="Forgot Password?"
+                android:text="@string/dialog_forgot_password_title"
                 android:textColor="@color/md_theme_light_secondary"
                 android:textSize="16sp" />
 
@@ -90,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/signupRedirectText"
-                android:text="Not yet registered? Sign Up"
+                android:text="@string/redirect_to_login"
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"

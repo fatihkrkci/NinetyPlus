@@ -14,6 +14,7 @@
         android:layout_height="220dp"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
+        android:backgroundTint="@color/md_theme_light_onSecondary"
         android:src="@drawable/onboarding_page1_img_bgprimary"/>
 
     <TextView

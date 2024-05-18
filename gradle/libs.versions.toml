@@ -20,6 +20,7 @@ recyclerview = "1.4.0-alpha01"
 glide = "5.0.0-rc01"
 converterGson = "2.11.0"
 lifecycleExtensions = "2.2.0"
+shimmer = "0.1.0"
 
 [libraries]
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
@@ -43,6 +44,7 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
 lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtensions" }
 retrofit2-converter-gson = { module = "com.square.retrofit2:converter-gson", version.ref = "converterGsonVersion" }
+shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

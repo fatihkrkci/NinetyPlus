@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="md_theme_light_textColor">#FF000000</color>
     <color name="md_theme_light_primary">#00639B</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#CEE5FF</color>
@@ -33,6 +34,7 @@
     <color name="md_theme_light_surfaceTint">#00639B</color>
     <color name="md_theme_light_outlineVariant">#C2C7CF</color>
     <color name="md_theme_light_scrim">#000000</color>
+    <color name="md_theme_dark_textColor">#FFFFFFFF</color>
     <color name="md_theme_dark_primary">#97CBFF</color>
     <color name="md_theme_dark_onPrimary">#003353</color>
     <color name="md_theme_dark_primaryContainer">#004A76</color>

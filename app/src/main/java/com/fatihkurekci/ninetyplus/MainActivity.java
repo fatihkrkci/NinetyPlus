@@ -1,18 +1,16 @@
 package com.fatihkurekci.ninetyplus;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.fatihkurekci.ninetyplus.ui.fragment.HomeFragment;
-import com.fatihkurekci.ninetyplus.ui.fragment.ProfileFragment;
+import com.fatihkurekci.ninetyplus.ui.fragment.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -20,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
+    SettingsFragment settingsFragment = new SettingsFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
                     return true;
-                } else if (item.getItemId() == R.id.profile) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+                } else if (item.getItemId() == R.id.settings) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, settingsFragment).commit();
                     return true;
                 }
                 return false;
