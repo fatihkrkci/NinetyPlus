@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return false;
             }
-
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -50,5 +49,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void updateBottomNavigation(int itemId) {
+        bottomNavigationView.setSelectedItemId(itemId);
     }
 }

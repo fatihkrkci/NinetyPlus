@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "MyPrefs";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String LAST_LOGIN_TIME = "lastLoginTime";
-    private static final long ONE_MINUTE_MILLIS = 600000; // 1 minute in milliseconds
+    private static final long TEN_MINUTE_MILLIS = 600000; // 10 minute in milliseconds
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class SplashActivity extends AppCompatActivity {
         long lastLoginTime = preferences.getLong(LAST_LOGIN_TIME, 0);
         long currentTime = System.currentTimeMillis();
 
-        if ((currentTime - lastLoginTime) <= ONE_MINUTE_MILLIS) {
+        if ((currentTime - lastLoginTime) <= TEN_MINUTE_MILLIS) {
             // Eğer son giriş 1 dakika içinde yapıldıysa, MainActivity'ye geç
             navigateToMain();
         } else {

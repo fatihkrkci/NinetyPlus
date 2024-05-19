@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     app:flow_horizontalAlign="center"
-    android:backgroundTint="@color/md_theme_light_onPrimary">
+    style="@style/Base.Theme.NinetyPlus">
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/get_started_title"
         android:textAlignment="center"
-        android:textColor="@color/md_theme_light_primary"
+        style="@style/Base.Theme.NinetyPlus"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/onboarding_screen1_description"
         android:textAlignment="center"
-        android:textColor="@color/md_theme_light_primary"
+        style="@style/Base.Theme.NinetyPlus"
         android:textSize="20sp" />
 
     <LinearLayout

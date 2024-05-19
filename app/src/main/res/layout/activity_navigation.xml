@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.onboarding.NavigationActivity"
-    android:background="@color/md_theme_light_onPrimary">
+    style="@style/Base.Theme.NinetyPlus">
 
     <Button
         android:id="@+id/skipButton"
@@ -14,10 +14,9 @@
         android:layout_height="wrap_content"
         android:text="@string/onboard_skip"
         android:fontFamily="@font/poppins_semibold"
-        android:backgroundTint="@color/md_theme_light_secondary"
+        style="@style/Base.Theme.NinetyPlus"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
-        android:textColor="@color/md_theme_light_onSecondary"
         android:textSize="14sp"
         android:padding="8dp"
         android:drawableRight="@drawable/ic_baseline_skip_next_24"
@@ -43,7 +42,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:backgroundTint="@color/md_theme_light_secondary"
         android:text="@string/onboard_back"
-        android:textColor="@color/md_theme_light_onSecondary"
+        style="@style/Base.Theme.NinetyPlus"
         android:textSize="16sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +57,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:backgroundTint="@color/md_theme_light_secondary"
         android:text="@string/onboard_next"
-        android:textColor="@color/md_theme_light_onSecondary"
+        style="@style/Base.Theme.NinetyPlus"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
