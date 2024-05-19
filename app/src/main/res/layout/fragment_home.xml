@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/Base.Theme.NinetyPlus"
-    tools:context=".ui.fragment.HomeFragment">
+    android:orientation="vertical">
 
+    <!-- Lig listesi için RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_leagues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
+
+    <!-- Maç listesi için RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_matcheslist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/Base.Theme.NinetyPlus"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
 
-</RelativeLayout>
+</LinearLayout>
