@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
 
     public void populateServices() {
-        ApiClient.getClient().create(ApiInterface.class).getMatchList().enqueue(new Callback<MatchesListApiResponse>() {
+        ApiClient.getClient().create(ApiInterface.class).getMatchList("2024-05-18","2024-05-19").enqueue(new Callback<MatchesListApiResponse>() {
             @Override
             public void onResponse(Call<MatchesListApiResponse> call, Response<MatchesListApiResponse> response) {
                 if (response.isSuccessful()) {

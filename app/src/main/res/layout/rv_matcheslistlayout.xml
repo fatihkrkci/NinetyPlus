@@ -53,7 +53,7 @@
                 android:text="@string/home_team_title"
                 android:layout_gravity="center"/>
 
-            <!-- Gol sayısı -->
+            <!-- Ev sahibi takımın skoru -->
             <TextView
                 android:id="@+id/homeTeamScoreTextView"
                 android:layout_width="wrap_content"
@@ -61,16 +61,10 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 style="@style/Base.Theme.NinetyPlus"
-                android:text="@string/default_score"
+                android:text="X"
                 android:layout_gravity="center"/>
-        </LinearLayout>
 
-        <!-- Orta çizgi -->
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            style="@style/Base.Theme.NinetyPlus"
-            android:background="@android:color/darker_gray"/>
+        </LinearLayout>
 
         <!-- Deplasman takım -->
         <LinearLayout
@@ -100,7 +94,7 @@
                 android:text="@string/away_team_title"
                 android:layout_gravity="center"/>
 
-            <!-- Gol sayısı -->
+            <!-- Deplasman takımın skoru -->
             <TextView
                 android:id="@+id/awayTeamScoreTextView"
                 android:layout_width="wrap_content"
@@ -108,8 +102,43 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 style="@style/Base.Theme.NinetyPlus"
-                android:text="@string/default_score"
+                android:text="X"
                 android:layout_gravity="center"/>
+
+
         </LinearLayout>
     </LinearLayout>
+
+    <!-- Maç Bilgileri -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/Base.Theme.NinetyPlus"
+        android:layout_marginTop="16dp">
+
+        <!-- Maç Saati -->
+        <TextView
+            android:id="@+id/matchTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            style="@style/Base.Theme.NinetyPlus"
+            android:text="Maç Saati: 20:00"
+            android:layout_gravity="center"/>
+
+        <!-- Maç Durumu -->
+        <TextView
+            android:id="@+id/matchStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            style="@style/Base.Theme.NinetyPlus"
+            android:text="Maç Durumu"
+            android:layout_gravity="center"/>
+
+</LinearLayout>
+
 </LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/circle_red.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#F44336"/> <!-- Kırmızı renk kodu -->
+    <size android:width="12dp"
+        android:height="12dp"/> <!-- Çapı 12dp olan bir daire -->
+</shape>
