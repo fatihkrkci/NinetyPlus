@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class RVLeagueListAdapter extends RecyclerView.Adapter<RVLeagueListAdapter.ViewHolder> {
 
-    private Context context;
-    private ArrayList<String> leagueList;
-    private LeagueClickListener listener;
+    private final Context context;
+    private final ArrayList<String> leagueList;
+    private final LeagueClickListener listener;
 
     public RVLeagueListAdapter(Context context, ArrayList<String> leagueList, LeagueClickListener listener) {
         this.context = context;
@@ -34,7 +34,9 @@ public class RVLeagueListAdapter extends RecyclerView.Adapter<RVLeagueListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(leagueList.get(position));
+        String leagueName = leagueList.get(position);
+        holder.leagueNameTextView.setText(leagueName);
+        holder.itemView.setOnClickListener(v -> listener.onLeagueClick(leagueName));
     }
 
     @Override
@@ -42,33 +44,18 @@ public class RVLeagueListAdapter extends RecyclerView.Adapter<RVLeagueListAdapte
         return leagueList.size();
     }
 
-    public void updateData(ArrayList<String> updatedList) {
+    public void updateData(ArrayList<String> updatedLeagueList) {
         leagueList.clear();
-        leagueList.addAll(updatedList);
+        leagueList.addAll(updatedLeagueList);
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView leagueNameTextView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView leagueNameTextView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             leagueNameTextView = itemView.findViewById(R.id.leagueNameTextView);
-            itemView.setOnClickListener(this);
-        }
-
-        public void bind(String leagueName) {
-            leagueNameTextView.setText(leagueName);
-        }
-
-        @Override
-        public void onClick(View v) {
-            if (listener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    listener.onLeagueClick(leagueList.get(position));
-                }
-            }
         }
     }
 

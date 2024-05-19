@@ -47,4 +47,14 @@
         <item name="android:itemBackground">@color/md_theme_light_onPrimaryContainer</item>
     </style>
 
+    <style name="WidgetAppButtonFilter">
+        <item name="android:background">@color/md_theme_light_tertiary</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
+    <style name="WidgetAppButtonReset">
+        <item name="android:background">@color/md_theme_light_error</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
 </resources>

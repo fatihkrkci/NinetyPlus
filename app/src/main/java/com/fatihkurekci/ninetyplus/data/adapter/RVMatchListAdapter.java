@@ -47,8 +47,14 @@ public class RVMatchListAdapter extends RecyclerView.Adapter<RVMatchListAdapter.
         return matchesLists.size();
     }
 
+    public void updateData(ArrayList<Match> updatedList) {
+        matchesLists.clear();
+        matchesLists.addAll(updatedList);
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView leagueNameTextView, homeTeamNameTextView, homeTeamScoreTextView, awayTeamScoreTextView, awayTeamNameTextView, homeCoachTextView, awayCoachTextView, matchTimeTextView, matchStatusTextView;
+        private TextView leagueNameTextView, homeTeamNameTextView, homeTeamScoreTextView, awayTeamScoreTextView, awayTeamNameTextView, matchTimeTextView, matchStatusTextView;
         private ImageView homeTeamLogoImageView, awayTeamLogoImageView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,7 +65,7 @@ public class RVMatchListAdapter extends RecyclerView.Adapter<RVMatchListAdapter.
             awayTeamScoreTextView = itemView.findViewById(R.id.awayTeamScoreTextView);
             awayTeamNameTextView = itemView.findViewById(R.id.awayTeamNameTextView);
             matchTimeTextView = itemView.findViewById(R.id.matchTimeTextView);
-            matchStatusTextView = itemView.findViewById(R.id.matchStatusTextView); // Yeni eklenen
+            matchStatusTextView = itemView.findViewById(R.id.matchStatusTextView);
 
             homeTeamLogoImageView = itemView.findViewById(R.id.homeTeamLogoImageView);
             awayTeamLogoImageView = itemView.findViewById(R.id.awayTeamLogoImageView);
@@ -75,34 +81,30 @@ public class RVMatchListAdapter extends RecyclerView.Adapter<RVMatchListAdapter.
             Glide.with(context).load(match.getHomeTeam().getCrest()).into(homeTeamLogoImageView);
             Glide.with(context).load(match.getAwayTeam().getCrest()).into(awayTeamLogoImageView);
 
-            // Maç saati ve durumunu ayarla
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
+
             try {
-                // API'den gelen tarihi biçimlendirme
-                SimpleDateFormat apiDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
-                Date matchDate = apiDateFormat.parse(match.getUtcDate());
-
-                // Gösterim için tarih biçimi
-                SimpleDateFormat displayDateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
-                String formattedDate = displayDateFormat.format(matchDate);
-                matchTimeTextView.setText(formattedDate);
-
-                // Maç durumu
-                if (match.getScore().getWinner() == null) {
-                    // Maç devam ediyor
-                    if (match.getScore().getHalfTime().getHome() == null) {
-                        // İlk yarı başlamadı
-                        matchStatusTextView.setText("Maç Başlamadı");
-                    } else {
-                        // İlk yarı başladı, maç devam ediyor
-                        matchStatusTextView.setText("Maç Devam Ediyor");
-                    }
-                } else {
-                    // Maç sona erdi
-                    matchStatusTextView.setText("Maç Bitti");
-                }
-
+                Date date = inputFormat.parse(match.getUtcDate());
+                matchTimeTextView.setText(outputFormat.format(date));
             } catch (ParseException e) {
                 e.printStackTrace();
+                matchTimeTextView.setText(match.getUtcDate());
+            }
+
+            // Maç durumu
+            if (match.getScore().getWinner() == null) {
+                // Maç devam ediyor
+                if (match.getScore().getHalfTime().getHome() == null) {
+                    // İlk yarı başlamadı
+                    matchStatusTextView.setText(R.string.match_has_not_started);
+                } else {
+                    // İlk yarı başladı, maç devam ediyor
+                    matchStatusTextView.setText(R.string.match_continues);
+                }
+            } else {
+                // Maç sona erdi
+                matchStatusTextView.setText(R.string.match_over);
             }
         }
     }

@@ -66,6 +66,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/md_theme_light_tertiary"/>
+
         <!-- Deplasman takım -->
         <LinearLayout
             android:layout_width="0dp"
