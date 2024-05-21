@@ -9,6 +9,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.fatihkurekci.ninetyplus.MainActivity;
 import com.fatihkurekci.ninetyplus.R;
@@ -17,17 +18,21 @@ import com.fatihkurekci.ninetyplus.ui.onboarding.NavigationActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final long SPLASH_DELAY = 3000; // 3 seconds
-    private static final String PREFS_NAME = "MyPrefs";
-    private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
-    private static final String LAST_LOGIN_TIME = "lastLoginTime";
-    private static final long TEN_MINUTE_MILLIS = 600000; // 10 minute in milliseconds
+    private static final long SPLASH_DELAY = 3000;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MODE", MODE_PRIVATE);
+        boolean nightMode = sharedPreferences.getBoolean("nightMode", false);
+        if (nightMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
+        setContentView(R.layout.activity_splash);
         hideSystemUI();
 
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
@@ -44,37 +49,32 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkFirstTimeLaunch() {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        boolean isFirstTime = preferences.getBoolean(IS_FIRST_TIME_LAUNCH, true);
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        boolean isFirstTime = preferences.getBoolean("IsFirstTimeLaunch", true);
 
         if (isFirstTime) {
-            // Eğer uygulama ilk kez başlatılıyorsa, NavigationActivity'yi başlat
             Intent intent = new Intent(this, NavigationActivity.class);
             startActivity(intent);
 
-            // Artık ilk kez başlatılmadığını kaydedin
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean(IS_FIRST_TIME_LAUNCH, false);
+            editor.putBoolean("IsFirstTimeLaunch", false);
             editor.apply();
         } else {
-            // Eğer uygulama daha önce başlatılmışsa, zaman kontrolü yap
             checkLastLoginTime();
         }
 
-        // Bu aktiviteyi sonlandırın
         finish();
     }
 
     private void checkLastLoginTime() {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        long lastLoginTime = preferences.getLong(LAST_LOGIN_TIME, 0);
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        long lastLoginTime = preferences.getLong("lastLoginTime", 0);
         long currentTime = System.currentTimeMillis();
+        final long TEN_MINUTE_MILLIS = 600000;
 
         if ((currentTime - lastLoginTime) <= TEN_MINUTE_MILLIS) {
-            // Eğer son giriş 1 dakika içinde yapıldıysa, MainActivity'ye geç
             navigateToMain();
         } else {
-            // Eğer son giriş 1 dakikadan uzun bir süre önce yapıldıysa, GetStartedActivity'ye geç
             navigateToGetStarted();
         }
     }

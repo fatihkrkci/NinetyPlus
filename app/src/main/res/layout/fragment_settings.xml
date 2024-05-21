@@ -2,23 +2,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context=".ui.fragment.SettingsFragment">
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="32dp"
+        android:padding="16dp"/>
 
     <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switchMode"
         android:layout_below="@id/spinner"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:thumb="@drawable/thumb"
-        android:track="@drawable/track"/>
+        android:text="Night Mode" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchMode"
+        android:layout_marginTop="32dp"
+        android:text="Logout" />
 
 </RelativeLayout>

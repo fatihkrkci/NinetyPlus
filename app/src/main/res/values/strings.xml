@@ -48,4 +48,7 @@
 
     <string name="reset_filter">Sıfırla</string>
     <string name="select_filter">Filtrele</string>
+
+    <string name="select_language">Dil Tercihi</string>
+    <string name="dark_mode">Koyu Tema</string>
 </resources>
